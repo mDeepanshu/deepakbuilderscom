@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, use } from "react";
 import styles from "./home.module.css";
 import banner1 from "../../assets/banner/one.avif";
 import banner2 from "../../assets/banner/two.avif";
@@ -9,17 +9,23 @@ function Home() {
   const sliderRef = useRef(null);
   const labels = ["radio1", "radio2", "radio3", "radio4"];
 
-  setTimeout(() => {
-    if (sliderRef.current) {
-      sliderRef.current.style.transform = "translateX(-25%)";
-    }
-  }, 2000);
+  const [bannerIdx, setBannerIdx] = useState(0);
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (sliderRef.current) {
+        setBannerIdx((prev) => (prev + 1) % 4);
+      }
+    }, 4000);
+  
+    return () => clearInterval(interval);
+  }, []);
 
-  const banner_change = (index) => {
+  useEffect(() => {
     if (sliderRef.current) {
-      sliderRef.current.style.transform = `translateX(-${index * 25}%)`;
+      sliderRef.current.style.transform = `translateX(-${bannerIdx * 25}%)`;
     }
-  };
+  }, [bannerIdx]);  
 
   return (
     <>
@@ -47,7 +53,7 @@ function Home() {
           </div>
           <div className={styles.banner_label_grp}>
             {labels.map((id, index) => (
-              <label key={id} htmlFor={id} className={styles.banner_label} onClick={() => banner_change(index)}></label>
+              <label key={id} htmlFor={id} className={`${bannerIdx === index ? styles.selected_banner : ""} ${styles.banner_label}`} onClick={() => setBannerIdx(index)}></label>
             ))}
           </div>
         </div>

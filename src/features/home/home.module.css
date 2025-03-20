@@ -51,5 +51,9 @@
 }
 
 .banner_label:hover {
-    background-color: #40d3dc;
-  }
+  background-color: #40d3dc;
+}
+
+.selected_banner {
+  background-color: #40d3dc;
+}
