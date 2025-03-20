@@ -1,0 +1,41 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to bottom, rgba(45, 39, 39, 0.723), rgba(199, 199, 215, 0.082));
+  color: black;
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  height: 50px;
+  z-index: 10;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo{
+  color: antiquewhite;
+  font-size: 25px;
+  font-weight: 500;
+  padding-left: 8rem;
+}
+
+.icons{
+  display: flex;
+  gap: 30px;
+  color: antiquewhite;
+  font-size: 20px;
+  font-weight: 400;
+  padding-right: 8rem;
+}
+
+.hidden {
+  transform: translateY(-100%);
+}
+
+.visible {
+  transform: translateY(0);
+}
