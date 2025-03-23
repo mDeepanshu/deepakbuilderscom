@@ -1,0 +1,95 @@
+.container{
+    height: 70vh;
+}
+
+.row_one{
+    padding-top: 2rem;
+    display: flex;
+    width: 115%;    
+}
+
+.description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    gap: 20px;
+    padding: 0 3rem;
+}
+
+.label_one{
+    color: #2F3D7E;
+    text-transform: uppercase;
+    font-size: clamp(14.5px, 1.042vw, 40px);
+    font-weight: 500;
+    line-height: 120%;
+}
+
+.scroll_section{
+    display: flex;
+    background-color: #F6F8FF;
+    border-radius: 30px 0 0 30px;
+    height: 24rem;
+}
+
+.property_card{
+    display: block;
+    margin: 2rem;
+    padding: 1rem;
+    width: 20rem;
+    text-align: center;
+    background-color: white;
+    border-radius: 30px;
+
+}
+
+.property_card > * {
+    margin-bottom: 1rem;
+}
+
+.property_img{
+    height: 50%;
+}
+
+.view_property_btn {
+    display: flex;
+    align-items: center;
+    /* font-size: 1.25rem; */
+    font-weight: bold;
+    line-height: 1;
+    text-transform: uppercase;
+    position: relative;
+    border: .1875em solid;
+    padding: 1em;
+    color: rebeccapurple;
+    background: transparent;
+    border-radius: .125em;
+    transition: background .3s;
+    cursor: pointer;
+    
+    &:hover,
+    &:focus {
+        color: white;
+        background: rebeccapurple;
+        border-color: rebeccapurple;
+    }
+    
+    &:active {
+        top: .08em;
+    }
+}
+
+.btn_label{
+    font-size: 1rem;
+    padding-right: 5px;
+}
+
+/* Helper Class to hide text visually but keep it accessible for screen reader or other assistive software. */
+.visually-hidden {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+}
