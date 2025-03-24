@@ -1,7 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
 import styles from "./header.module.css";
-import MenuIcon from '@mui/icons-material/Menu';
-import CallIcon from '@mui/icons-material/Call';
+import MenuIcon from "@mui/icons-material/Menu";
+import CallIcon from "@mui/icons-material/Call";
+import menu from "../../assets/header/svgexport-1.svg";
+import phone from "../../assets/header/svgexport-2.svg";
 
 function Header() {
   const [isVisible, setIsVisible] = useState(true);
@@ -28,8 +30,12 @@ function Header() {
           <div className={styles.logo}>RK CONSTRUCTION</div>
           <div className={styles.icons}>
             <div className={styles.contact}>OUR PROJECT</div>
-            <div className={styles.contact}><CallIcon/></div>
-            <div className={styles.contact}><MenuIcon/></div>
+            <div className={styles.svg_icons}>
+              <img src={phone} width="43px" height="43px" />
+            </div>
+            <div className={styles.svg_icons}>
+              <img src={menu} width="43px" height="43px" />
+            </div>
           </div>
         </div>
       </div>

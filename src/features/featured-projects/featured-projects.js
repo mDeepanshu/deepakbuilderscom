@@ -1,25 +1,36 @@
 import React, { useEffect, useState, useRef, use } from "react";
 import styles from "./featured-project.module.css";
 import building from "../../assets/featuredprojects/building.svg";
+import property1 from "../../assets/featuredprojects/property-1.png";
+import property2 from "../../assets/featuredprojects/property-2.png";
+import property3 from "../../assets/featuredprojects/property-3.png";
+import property4 from "../../assets/featuredprojects/property-4.png";
 
 function FeaturedProjects() {
   const [properties, setProperties] = useState([
     {
-      property_img: "",
+      property_img: property1,
       property_name: "",
       property_location: "",
       price: "",
       property_desc: "",
     },
     {
-      property_img: "",
+      property_img: property2,
       property_name: "",
       property_location: "",
       price: "",
       property_desc: "",
     },
     {
-      property_img: "",
+      property_img: property3,
+      property_name: "",
+      property_location: "",
+      price: "",
+      property_desc: "",
+    },
+    {
+      property_img: property4,
       property_name: "",
       property_location: "",
       price: "",
@@ -32,8 +43,10 @@ function FeaturedProjects() {
       <div className={styles.container}>
         <div className={styles.row_one}>
           <div className={styles.description}>
-            <div className={styles.label_one}>PROPERTIES</div>
-            <div>Feature Properties</div>
+            <div className={styles.label_one}>
+              <p className={styles.properties_line}></p> PROPERTIES
+            </div>
+            <div className={styles.label_two}>Feature Properties</div>
             <div>Lorem ipsum dolor sit amet consectetur. Accumsan lacus neque nunc convallis eleifend vitae et felis potenti.</div>
             <div>
               <button type="button" className={styles.view_property_btn}>
@@ -42,14 +55,16 @@ function FeaturedProjects() {
               </button>
             </div>
             <div>
-                <button type="button">LEFT</button>
-                <button type="button">RIGHT</button>
+              <button type="button">LEFT</button>
+              <button type="button">RIGHT</button>
             </div>
           </div>
           <div className={styles.scroll_section}>
             {properties?.map((id, index) => (
               <div key={id} className={styles.property_card}>
-                <div className={styles.property_img}></div>
+                <div className={styles.property_img}>
+                  <img src={properties[index].property_img} className={styles.banner_img} />
+                </div>
                 <div className={styles.property_name}>Luxurious Living Spaces</div>
                 <div className={styles.property_location}>101 Serene Avenue, Maplewood Gardens.</div>
                 <div className={styles.price}>90000</div>

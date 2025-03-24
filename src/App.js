@@ -14,7 +14,7 @@ function App() {
       <Home></Home>
       <OurValues></OurValues>
       <FeaturedProjects></FeaturedProjects>
-      {/* <Footer></Footer> */}
+      <Footer></Footer>
     </>
   );
 }

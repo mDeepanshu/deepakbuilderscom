@@ -1,23 +1,28 @@
 .container{
-    height: 70vh;
+    height: 80vh;
 }
 
 .row_one{
     padding-top: 2rem;
     display: flex;
-    width: 115%;    
+    width: 160%;   
+    overflow: auto;
+    /* height: 100%;  */
 }
 
 .description{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 30%;
+    width: 17%;
     gap: 20px;
     padding: 0 3rem;
 }
 
 .label_one{
+    display: flex;
+    align-items: center;
+    gap: 5px;
     color: #2F3D7E;
     text-transform: uppercase;
     font-size: clamp(14.5px, 1.042vw, 40px);
@@ -25,21 +30,27 @@
     line-height: 120%;
 }
 
+.label_two{
+    font-size: 32px;
+    font-weight: 700;
+}
+
 .scroll_section{
     display: flex;
+    width: 70%;
     background-color: #F6F8FF;
     border-radius: 30px 0 0 30px;
-    height: 24rem;
+    height: 28rem;
 }
 
 .property_card{
     display: block;
     margin: 2rem;
-    padding: 1rem;
-    width: 20rem;
+    /* padding: 1rem; */
+    width: 35%;
     text-align: center;
     background-color: white;
-    border-radius: 30px;
+    border-radius: 0 0 10px 10px;
 
 }
 
@@ -47,8 +58,22 @@
     margin-bottom: 1rem;
 }
 
+.properties_line{
+    height: 1px;
+    width: 25px;
+    background-color: #2F3D7E;
+}
+
 .property_img{
     height: 50%;
+}
+
+.banner_img{
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+
 }
 
 .view_property_btn {
