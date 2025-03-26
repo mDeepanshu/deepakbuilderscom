@@ -5,9 +5,25 @@ import property1 from "../../assets/featuredprojects/property-1.png";
 import property2 from "../../assets/featuredprojects/property-2.png";
 import property3 from "../../assets/featuredprojects/property-3.png";
 import property4 from "../../assets/featuredprojects/property-4.png";
+import arrowleft from "../../assets/featuredprojects/arrowleft.svg";
+import arrowright from "../../assets/featuredprojects/arrowright.svg";
 
 function FeaturedProjects() {
   const [properties, setProperties] = useState([
+    {
+      property_img: property1,
+      property_name: "",
+      property_location: "",
+      price: "",
+      property_desc: "",
+    },
+    {
+      property_img: property2,
+      property_name: "",
+      property_location: "",
+      price: "",
+      property_desc: "",
+    },
     {
       property_img: property1,
       property_name: "",
@@ -38,6 +54,36 @@ function FeaturedProjects() {
     },
   ]);
 
+  const containerRef = useRef(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+
+  const handleMouseDown = (e) => {
+    if (!containerRef.current) return;
+    setIsDragging(true);
+    setStartX(e.pageX - containerRef.current.offsetLeft);
+    setScrollLeft(containerRef.current.scrollLeft);
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging || !containerRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - containerRef.current.offsetLeft;
+    const walk = x - startX; // Multiplier for faster scrolling
+    containerRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const move = (direction) => {
+    if (!containerRef.current) return;
+    const scrollAmount = direction ? -200 : 200; // Adjust scroll amount as needed
+    containerRef.current.scrollLeft += scrollAmount;
+  };
+
   return (
     <>
       <div className={styles.container}>
@@ -54,14 +100,19 @@ function FeaturedProjects() {
                 <img src={building} width="20px" height="20px" />
               </button>
             </div>
-            <div>
-              <button type="button">LEFT</button>
-              <button type="button">RIGHT</button>
+            <div className={styles.arrowBtnGrp}>
+              <div className={styles.arrowBtns}>
+                <img src={arrowleft} width="34px" height="34px" onClick={() => move(true)} />
+              </div>
+              <div className={styles.arrowBtns}>
+                <img src={arrowright} width="34px" height="34px" onClick={() => move(false)} />
+              </div>
             </div>
           </div>
-          <div className={styles.scroll_section}>
+          <div className={styles.scroll_section} ref={containerRef} onMouseDown={handleMouseDown} onMouseMove={handleMouseMove} onMouseLeave={handleMouseUp} onMouseUp={handleMouseUp}>
             {properties?.map((id, index) => (
               <div key={id} className={styles.property_card}>
+                <div className={styles.viewDetailesBtn}> View Details</div>
                 <div className={styles.property_img}>
                   <img src={properties[index].property_img} className={styles.banner_img} />
                 </div>
