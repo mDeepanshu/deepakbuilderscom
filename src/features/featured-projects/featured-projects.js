@@ -5,8 +5,8 @@ import property1 from "../../assets/featuredprojects/property-1.png";
 import property2 from "../../assets/featuredprojects/property-2.png";
 import property3 from "../../assets/featuredprojects/property-3.png";
 import property4 from "../../assets/featuredprojects/property-4.png";
-import arrowleft from "../../assets/featuredprojects/arrowleft.svg";
-import arrowright from "../../assets/featuredprojects/arrowright.svg";
+import { ReactComponent as ArrowRight } from "../../assets/featuredprojects/arrowright.svg";
+import { ReactComponent as ArrowLeft } from "../../assets/featuredprojects/arrowleft.svg";
 
 function FeaturedProjects() {
   const [properties, setProperties] = useState([
@@ -102,10 +102,10 @@ function FeaturedProjects() {
             </div>
             <div className={styles.arrowBtnGrp}>
               <div className={styles.arrowBtns}>
-                <img src={arrowleft} width="34px" height="34px" onClick={() => move(true)} />
+              <ArrowLeft width={34} height={34} onClick={() => move(true)}/>
               </div>
               <div className={styles.arrowBtns}>
-                <img src={arrowright} width="34px" height="34px" onClick={() => move(false)} />
+              <ArrowRight width={34} height={34} onClick={() => move(false)}/>
               </div>
             </div>
           </div>

@@ -20,9 +20,11 @@ function Footer() {
         </div>
         <div>
           <div className={styles.heading}>Quick Links</div>
-          <div>All Projects</div>
-          <div>Contact Us</div>
-          <div>Locate Us On Map</div>
+          <ul>
+            <li><div className={styles.li_div}>All Projects</div></li>
+            <li><div className={styles.li_div}>Contact Us</div></li>
+            <li><div className={styles.li_div}>Locate Us On Map</div></li>
+          </ul>
         </div>
       </div>
     </>

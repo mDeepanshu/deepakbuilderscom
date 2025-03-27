@@ -57,3 +57,7 @@
 .selected_banner {
   background-color: #40d3dc;
 }
+
+img{
+  cursor:default;
+}
