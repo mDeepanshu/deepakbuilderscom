@@ -1,0 +1,28 @@
+
+.row_one{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 1rem 0;
+}
+
+
+.title{
+    font-weight: 600;
+    color: #27262E;
+    font-size: 20px;
+    padding: 1rem 1rem;
+}
+
+.row_two{
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100vw - 13rem);
+    padding: 0 6rem;
+    justify-content: center;
+}
+
+.card{
+    padding: 2rem;
+    cursor: pointer;
+}

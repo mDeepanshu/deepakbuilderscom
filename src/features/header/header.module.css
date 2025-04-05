@@ -16,11 +16,16 @@
   align-items: center;
 }
 
+.notHomePage{
+  background-color: #27262e;
+}
+
 .logo{
   color: antiquewhite;
   font-size: 25px;
   font-weight: 500;
   padding-left: 8rem;
+  cursor: pointer;
 }
 
 .contact{
@@ -47,6 +52,37 @@
   transform: translateY(0);
 }
 
-img{
+/* img{
   cursor: pointer;
+} */
+
+.phone_icn{
+  position: relative;
+  cursor: pointer;
+}
+
+.popover{
+ /* z-index: 15;
+ position: absolute;
+ right: 12px;
+ top: 68px; */
+
+ border: 1px solid #e5e9ed;
+ border-radius: 4px;
+ box-shadow: 0 2px 7px rgba(0, 0, 0, .15);
+ /* display: none; */
+ padding-bottom: 16px;
+ padding-top: 16px;
+ position: absolute;
+ right: 200px;
+ top: 68px;
+
+
+ border: none !important;
+ color: #fff;
+ font-size: 18px;
+ text-shadow: 0 0 6px #000;
+ width: 10rem;
+ /* height: 20rem; */
+ background: rgba(0, 0, 0, .35) !important;
 }

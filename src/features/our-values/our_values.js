@@ -17,7 +17,7 @@ function OurValues() {
           <div className={styles.left_line}>
             <img src={left_line} width="400px" height="15px" className={styles.right_line_img} />
           </div>
-          <div className={styles.title}>VALUES WE PRESERVE</div>
+          <div className={styles.title}> EXPLORE HOMES </div>
           <div className={styles.right_line}>
             <img src={right_line} width="400px" height="15px" className={styles.left_line_img} />
           </div>
