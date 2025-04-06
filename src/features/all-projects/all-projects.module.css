@@ -18,7 +18,7 @@
     display: flex;
     flex-wrap: wrap;
     width: calc(100vw - 13rem);
-    padding: 0 6rem;
+    padding: 0 5rem;
     justify-content: center;
 }
 
@@ -26,3 +26,31 @@
     padding: 2rem;
     cursor: pointer;
 }
+
+.swing {
+    animation: swing ease-in-out .35s infinite alternate;
+    transform-origin: center -20px;
+    float: left;
+    cursor: pointer;
+    position: fixed;
+    top: 3rem;
+    left: 4rem;
+    z-index: 2;
+  }
+  
+  @keyframes swing {
+      0% { transform: rotate(3deg); }
+      100% { transform: rotate(-3deg); }
+  }
+  
+  .verticleline {
+    transform: rotate(90deg);
+    border: 1px solid #EFC337;
+    width: 120px;
+    margin-bottom: 40px;
+  }
+  .rectangletag {
+    padding: 0.5rem 2rem;
+    border: 2px solid #EFC337;
+    transform: skewY(0deg)
+  }

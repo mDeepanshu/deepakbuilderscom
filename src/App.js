@@ -27,7 +27,7 @@ function App() {
         </>
       ) : (
         <>
-          <AllProjects></AllProjects>
+          <AllProjects handlePageChange={handlePage}></AllProjects>
         </>
       )}
       <Footer></Footer>
