@@ -9,7 +9,7 @@ import property4 from "../../assets/allprojects/4.webp";
 
 import styles from "./all-projects.module.css";
 
-function AllProjects() {
+function AllProjects(props) {
   const [properties, setProperties] = useState([
     {
       property_img: property1,
@@ -55,10 +55,22 @@ function AllProjects() {
     },
   ]);
 
+  const navigate = (val) => {
+    props.handlePageChange(val);
+  };
+
   return (
     <>
       <div>
         <div className={styles.row_one}>
+          <div className={styles.swing}>
+            <hr className={styles.verticleline}/>
+            <div className={styles.rectangletag} onClick={() => navigate(true)}>
+              <h4>
+                <span>BACK</span>
+              </h4>
+            </div>
+          </div>
           <div className={styles.left_line}>
             <img src={left_line} width="400px" height="15px" className={styles.right_line_img} />
           </div>
@@ -71,7 +83,7 @@ function AllProjects() {
           {properties?.map((id, index) => (
             <div className={styles.card}>
               <div className={styles.property_img}>
-                <img src={properties[index].property_img} className={styles.banner_img}  width="400px" height="500px"/>
+                <img src={properties[index].property_img} className={styles.banner_img} width="400px" height="500px" />
               </div>
               <div className={styles.property_name}>Luxurious Living Spaces</div>
               <div className={styles.property_location}>101 Serene Avenue, Maplewood Gardens.</div>
