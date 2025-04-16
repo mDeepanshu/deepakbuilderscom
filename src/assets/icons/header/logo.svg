@@ -1,10 +1,21 @@
-<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <path d="M10 90 L50 10 L90 90 Z" fill="#3498db"/>
+<svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="200" fill="#0a0f2c"/>
+  
+  <!-- Building and House -->
+  <path d="M100 130 L100 90 L120 90 L120 130 Z" fill="#d4af37"/>
+  <path d="M125 110 L125 70 L145 70 L145 130 L125 130 Z" fill="#d4af37"/>
+  <path d="M150 95 L150 60 L170 60 L170 130 L150 130 Z" fill="#d4af37"/>
+  
+  <!-- Roof -->
+  <polygon points="95,90 135,50 175,90" fill="#d4af37"/>
 
-  <path d="M50 10 L10 50 L90 50 Z" fill="#2980b9"/>
+  <!-- Peacock feather detail -->
+  <circle cx="135" cy="40" r="8" fill="#228b22"/>
+  <circle cx="135" cy="40" r="4" fill="#1e90ff"/>
+  <path d="M135 40 Q130 30, 125 35 Q120 40, 125 45 Q130 50, 135 40" fill="none" stroke="#228b22" stroke-width="1"/>
 
-  <path d="M25 60 L25 80 L35 80 L35 70 L45 70 L45 80 L55 80 L55 60 Z" fill="#ecf0f1"/>
-
-  <path d="M65 60 L65 80 L75 80 L75 70 L85 80 L85 60 L75 70 Z" fill="#ecf0f1"/>
-
+  <!-- Text -->
+  <text x="150" y="170" font-family="Arial, sans-serif" font-size="18" fill="#d4af37" text-anchor="middle">
+    RAI KRISHNA CONSTRUCTION
+  </text>
 </svg>

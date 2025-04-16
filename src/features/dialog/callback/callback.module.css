@@ -1,0 +1,38 @@
+.title{
+    display: flex;
+    justify-content: center;
+    font-weight: 550;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.form{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 3 equal columns */
+    gap: 10px;
+    overflow-x: hidden;
+}
+
+.form > *{
+    width: 80%;
+}
+
+input{
+    width: 100%;
+    border: none;               /* Remove all borders */
+    border-bottom: 1px solid #000; /* Keep only bottom border */
+    outline: none;              /* Optional: Remove focus outline */
+
+}
+
+textarea{
+    width: 100%;
+    border: none;               /* Remove all borders */
+    border-bottom: 1px solid #000; /* Keep only bottom border */
+    outline: none; 
+    height: 5rem;
+}

@@ -5,8 +5,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
-import Header from "./features/header/header";
 import Home from "./features/home/home";
+import AllProjects from "./features/all-projects/all-projects";
+import ProjectDetails from "./features/project-detail/project-detail";
+import Admin from "./features/admin/admin";
 
 const router = createBrowserRouter([
 	{
@@ -14,12 +16,24 @@ const router = createBrowserRouter([
 		element: <App />,
 		children: [
 			{
-				path: 'header',
-				element: <Header />
+				path: '',
+				element: <Home />
 			},
 			{
 				path: 'home',
 				element: <Home />
+			},
+			{
+				path: 'allProjects',
+				element: <AllProjects />
+			},
+			{
+				path: 'projectDetails',
+				element: <ProjectDetails />
+			},
+			{
+				path: 'admin',
+				element: <Admin />
 			},
 		],
 		// errorElement: <Error />
@@ -36,4 +50,3 @@ root.render(
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

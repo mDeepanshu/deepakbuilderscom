@@ -8,6 +8,7 @@ import property3 from "../../assets/allprojects/3.webp";
 import property4 from "../../assets/allprojects/4.webp";
 
 import styles from "./all-projects.module.css";
+import { Link } from "react-router-dom";
 
 function AllProjects(props) {
   const [properties, setProperties] = useState([
@@ -55,19 +56,17 @@ function AllProjects(props) {
     },
   ]);
 
-  const navigate = (val) => {
-    props.handlePageChange(val);
-  };
-
   return (
     <>
       <div>
         <div className={styles.row_one}>
           <div className={styles.swing}>
-            <hr className={styles.verticleline}/>
-            <div className={styles.rectangletag} onClick={() => navigate(true)}>
+            <hr className={styles.verticleline} />
+            <div className={styles.rectangletag}>
               <h4>
-                <span>BACK</span>
+                <span>
+                  <Link to="/" className={styles.back_label}>BACK</Link>
+                </span>
               </h4>
             </div>
           </div>
@@ -81,15 +80,17 @@ function AllProjects(props) {
         </div>
         <div className={styles.row_two}>
           {properties?.map((id, index) => (
-            <div className={styles.card}>
-              <div className={styles.property_img}>
-                <img src={properties[index].property_img} className={styles.banner_img} width="400px" height="500px" />
+            <Link to="/projectDetails" className={styles.link} key={index}>
+              <div className={styles.card}>
+                <div className={styles.property_img}>
+                  <img src={properties[index].property_img} className={styles.banner_img} width="400px" height="500px" />
+                </div>
+                <div className={styles.property_name}>Luxurious Living Spaces</div>
+                <div className={styles.property_location}>101 Serene Avenue, Maplewood Gardens.</div>
+                <div className={styles.price}>90000</div>
+                <div className={styles.property_desc}>4 Bedroom 2 Bathroom 360 Sqft</div>
               </div>
-              <div className={styles.property_name}>Luxurious Living Spaces</div>
-              <div className={styles.property_location}>101 Serene Avenue, Maplewood Gardens.</div>
-              <div className={styles.price}>90000</div>
-              <div className={styles.property_desc}>4 Bedroom 2 Bathroom 360 Sqft</div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
