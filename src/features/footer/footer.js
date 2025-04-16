@@ -1,10 +1,14 @@
 import React, { useEffect, useState, useRef } from "react";
 import styles from "./footer.module.css";
+import location from "../../assets/footer/logo.png";
 
 function Footer() {
   return (
     <>
       <div className={styles.container}>
+        <div>
+          <img src={location} alt="logo" className={styles.logo} />
+        </div>
         <div>
           <div className={styles.heading}>RK Constructions</div>
           <div>

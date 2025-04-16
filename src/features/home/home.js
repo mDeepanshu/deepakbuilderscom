@@ -4,6 +4,8 @@ import banner1 from "../../assets/banner/one.avif";
 import banner2 from "../../assets/banner/two.avif";
 import banner3 from "../../assets/banner/three.avif";
 import banner4 from "../../assets/banner/four.avif";
+import OurValues from "../our-values/our_values";
+import FeaturedProjects from "../featured-projects/featured-projects";
 
 function Home() {
   const sliderRef = useRef(null);
@@ -58,6 +60,8 @@ function Home() {
           </div>
         </div>
       </div>
+      <OurValues></OurValues>
+      <FeaturedProjects></FeaturedProjects>
     </>
   );
 }

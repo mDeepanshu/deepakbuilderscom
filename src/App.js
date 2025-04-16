@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import React, { useEffect, useState, useRef, use } from "react";
+import { Outlet } from "react-router-dom";
 
 import Header from "./features/header/header";
 import Home from "./features/home/home";
@@ -19,17 +20,7 @@ function App() {
   return (
     <>
       <Header handlePageChange={handlePage} isHomePage={isMainPage}></Header>
-      {isMainPage ? (
-        <>
-          <Home></Home>
-          <OurValues></OurValues>
-          <FeaturedProjects></FeaturedProjects>
-        </>
-      ) : (
-        <>
-          <AllProjects handlePageChange={handlePage}></AllProjects>
-        </>
-      )}
+      <Outlet/>
       <Footer></Footer>
     </>
   );

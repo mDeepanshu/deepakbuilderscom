@@ -49,3 +49,10 @@ li::before {
 .li_div:hover {
   color: #ed7d3a;
 }
+
+.logo{
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  /* margin: auto; */
+}

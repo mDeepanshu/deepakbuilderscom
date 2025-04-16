@@ -7,6 +7,7 @@ import property3 from "../../assets/featuredprojects/property-3.png";
 import property4 from "../../assets/featuredprojects/property-4.png";
 import { ReactComponent as ArrowRight } from "../../assets/featuredprojects/arrowright.svg";
 import { ReactComponent as ArrowLeft } from "../../assets/featuredprojects/arrowleft.svg";
+import { Link } from "react-router-dom";
 
 function FeaturedProjects() {
   const [properties, setProperties] = useState([
@@ -112,7 +113,7 @@ function FeaturedProjects() {
           <div className={styles.scroll_section} ref={containerRef} onMouseDown={handleMouseDown} onMouseMove={handleMouseMove} onMouseLeave={handleMouseUp} onMouseUp={handleMouseUp}>
             {properties?.map((id, index) => (
               <div key={id} className={styles.property_card}>
-                <div className={styles.viewDetailesBtn}> View Details</div>
+                <div className={styles.viewDetailesBtn}> <Link to="/projectDetails" className={styles.projectLink}>View Details</Link></div>
                 <div className={styles.property_img}>
                   <img src={properties[index].property_img} className={styles.banner_img} />
                 </div>
