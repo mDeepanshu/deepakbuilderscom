@@ -8,6 +8,11 @@ import property4 from "../../assets/featuredprojects/property-4.png";
 import { ReactComponent as ArrowRight } from "../../assets/featuredprojects/arrowright.svg";
 import { ReactComponent as ArrowLeft } from "../../assets/featuredprojects/arrowleft.svg";
 import { Link } from "react-router-dom";
+import shower from "../../assets/featuredprojects/shower.svg";
+import area from "../../assets/featuredprojects/area.svg";
+import location from "../../assets/featuredprojects/location.svg";
+import bed from "../../assets/featuredprojects/bed.svg";
+
 
 function FeaturedProjects() {
   const [properties, setProperties] = useState([
@@ -117,10 +122,10 @@ function FeaturedProjects() {
                 <div className={styles.property_img}>
                   <img src={properties[index].property_img} className={styles.banner_img} />
                 </div>
-                <div className={styles.property_name}>Luxurious Living Spaces</div>
-                <div className={styles.property_location}>101 Serene Avenue, Maplewood Gardens.</div>
+                <div className={styles.property_name}><b>Luxurious Living Spaces</b></div>
+                <div className={styles.property_location}><img src={location}/>101 Serene Avenue, Maplewood Gardens.</div>
                 <div className={styles.price}>90000</div>
-                <div className={styles.property_desc}>4 Bedroom 2 Bathroom 360 Sqft</div>
+                <div className={styles.property_desc}><img src={shower}/>4 Bedroom <img src={bed}/> 2 Bathroom <img src={area}/> 360 Sqft</div>
               </div>
             ))}
           </div>
