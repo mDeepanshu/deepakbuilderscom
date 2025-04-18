@@ -15,11 +15,13 @@ function Admin() {
   const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = (data) => {
-    console.log('Form Data:', data);
-    if (data.bannerImage && data.bannerImage.length > 0) {
-      const imageFile = data.bannerImage[0];
-      console.log('Banner Image File:', imageFile);
-    }
+    const files = data.bannerImage;
+    console.log('Selected Images:', files);
+
+    // If you want to loop through and do something with each file
+    Array.from(files).forEach((file, index) => {
+      console.log(`Image ${index + 1}:`, file.name);
+    });
   };
 
   return <>
@@ -53,7 +55,17 @@ function Admin() {
                   <div style={{ marginBottom: '1rem' }}>
                     <label>Property Images:</label>
                     <br />
-                    <input type="file" {...register('bannerImage')} accept="image/*" multiple/>
+                    <input type="file" {...register('bannerImage')} accept="image/*" multiple />
+                  </div>
+
+                  <div style={{ marginBottom: '1rem' }}>
+                    <label>Project Video:</label>
+                    <br />
+                    <input
+                      type="file"
+                      {...register('projectVideo')}
+                      accept="video/*"
+                    />
                   </div>
 
                   {/* Property Description */}
