@@ -1,6 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
 import styles from "./footer.module.css";
 import location from "../../assets/footer/logo.png";
+import email from "../../assets/footer/icon-email.svg";
+import location_svg from "../../assets/footer/icon-location.svg";
+import phone from "../../assets/footer/icon-phone.svg";
 
 function Footer() {
   return (
@@ -18,9 +21,9 @@ function Footer() {
         </div>
         <div>
           <div className={styles.heading}>Contact Info.</div>
-          <div>123, Lorem Ipsum, Street no, Cityname, Country 123456</div>
-          <div>Phone: +91 1234567890</div>
-          <div>Email: XXXXXXXXXXXXXXXXXXXXXXXXX</div>
+          <div> <img src={location_svg}/> 123, Lorem Ipsum, Street no, Cityname, Country 123456</div>
+          <div> <img src={phone}/> Phone: +91 1234567890</div>
+          <div> <img src={email}/> Email: XXXXXXXXXXXXXXXXXXXXXXXXX</div>
         </div>
         <div>
           <div className={styles.heading}>Quick Links</div>
