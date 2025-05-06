@@ -5,29 +5,52 @@ import { useLocation } from "react-router-dom";
 import AddProject from "./admin-screens/add-project/add-project";
 import AllProjects from "./admin-screens/all-projects/all-projects";
 function Admin() {
+  const [selectedTab,setSelectedTab] = useState("tab1");
+  const tabsArray = [
+    { id: "tab1", name: "tab1", label: "Add Project" },
+    { id: "tab2", name: "tab2", label: "All Projects" },
+  ];
+  const changeTab = (tabId) => {
+    setSelectedTab(tabId);
+  }
 
-  return <>
-    <div className={styles.admin_container}>
-      <h1>ADMIN SETTINGS</h1>
-      <Link to="/">BACK</Link>
-      <div>
-        <div className={styles.tabset}>
-          <input className={styles.radio_input} type="radio" name="tabset" id="tab1" aria-controls="new_project" />
-          <label className={styles.tab_label} for="tab1">Add Project</label>
-          <input className={styles.radio_input} type="radio" name="tabset" id="tab2" aria-controls="all_projects" />
-          <label className={styles.tab_label} for="tab2">All Project</label>
-          <div className={styles.tabPanels}>
-            <section id="new_project" className={styles.tabPanel}>
-              <AddProject />
-            </section>
-            <section id="all_projects" className={styles.tabPanel}>
-              <AllProjects />
-            </section>
+  return (
+    <>
+      <div className={styles.admin_container}>
+        <h1>ADMIN SETTINGS</h1>
+        <Link to="/">BACK</Link>
+        <div>
+          <div className={styles.tabset}>
+            {tabsArray.map((tab) => (
+              <>
+                <input
+                  key={tab.id}
+                  className={styles.radio_input}
+                  type="radio"
+                  name="tabset"
+                  id={tab.id}
+                  aria-controls={tab.name}
+                  checked={selectedTab === tab.id}
+                  onChange={() => changeTab(tab.id)}
+                />
+                <label key={tab.id} className={styles.tab_label} for={tab.id}>
+                  {tab.label}
+                </label>
+              </>
+            ))}
+            <div className={styles.tabPanels}>
+              <section id="new_project" className={styles.tabPanel}>
+                <AddProject />
+              </section>
+              <section id="all_projects" className={styles.tabPanel}>
+                <AllProjects />
+              </section>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </>;
+    </>
+  );
 }
 
 export default Admin;
