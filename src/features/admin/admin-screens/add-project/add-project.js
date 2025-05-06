@@ -66,6 +66,8 @@ function AddProject() {
     const metadata = {
       Project_Name: projectName,
       Property_Description: formData.Property_Description,
+      Property_Address: formData.Property_Address,
+      Property_Price: formData.Property_Price,
       Property_Location: formData.Property_Location,
       Banner_Image_Link: bannerUrl,
       Property_Images_Links: propertyImageUrls,
@@ -97,6 +99,27 @@ function AddProject() {
             <label>Project Name:</label>
             <br />
             <input type="text" {...register("Project_Name")} required />
+          </div>
+
+          {/* Property Address */}
+          <div style={{ marginBottom: "1rem" }}>
+            <label>Property Address:</label>
+            <br />
+            <input type="text" {...register("Property_Address")} required />
+          </div>
+
+          {/* Property Address */}
+          <div style={{ marginBottom: "1rem" }}>
+            <label>Price:</label>
+            <br />
+            <input type="text" {...register("Property_Price")} required />
+          </div>
+
+          {/* Property Address */}
+          <div style={{ marginBottom: "1rem",display:"flex",gap:"1rem" }}>
+            <label>Bedroom:</label><input type="text" {...register("Property_Bedroom")} required />
+            <label>Bathroom:</label><input type="text" {...register("Property_Bathroom")} required />
+            <label>SqFt:</label><input type="text" {...register("Property_SqFt")} required />
           </div>
 
           {/* Banner Image */}
@@ -137,7 +160,7 @@ function AddProject() {
 
           {/* Property Location */}
           <div style={{ marginBottom: "1rem" }}>
-            <label>Property Location:</label>
+            <label>Property Map Location Link:</label>
             <br />
             <input type="text" {...register("Property_Location")} required />
           </div>
