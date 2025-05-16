@@ -5,15 +5,18 @@ import { useLocation } from "react-router-dom";
 import { useForm, Controller } from "react-hook-form";
 import { TextField, Button, Box, Typography } from "@mui/material";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
-import  getData from "../../../../gateway/addProject";
+import  getData from "../../../../gateway/getProjects.js";
 
 function AllProjects() {
+
+  const [projects,setProjects] = useState([]); 
 
     useEffect(() => {
         const fetchData = async () => {
           try {
             const result = await getData();
             console.log(result);
+            setProjects(result);
           } catch (error) {
             console.error(error);
           }
@@ -34,15 +37,21 @@ function AllProjects() {
             </tr>
           </thead>
           <tbody className={styles.table_body}>
-            <tr>
-              <td>Project 1</td>
-              <td>hidden</td>
-              <td>
-                <Button variant="outlined" color="primary">
-                  <VisibilityOffIcon />
-                </Button>
-              </td>
-            </tr>
+            {projects.map((project) => (
+              <tr key={project.id}>
+                <td>{project.Project_Name}</td>
+                <td>{project.status}</td>
+                <td>
+                  <Button variant="outlined" color="primary">
+                    {project.status === "hidden" ? (
+                      <VisibilityOffIcon />
+                    ) : (
+                      <VisibilityOffIcon />
+                    )}
+                  </Button>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>

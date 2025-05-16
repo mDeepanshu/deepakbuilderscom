@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const getData = async () => {
+const addData = async (projectData) => {
   try {
-    const response = await axios.get(`https://n6fpm9zzk8.execute-api.ap-south-1.amazonaws.com/dev/get-projects`);
+    const response = await axios.post(`https://n9okaf9j4h.execute-api.ap-south-1.amazonaws.com/prod/one`,projectData);
     return response.data;  // return the data
   } catch (error) {
     console.error('Error fetching data:', error);
@@ -10,4 +10,4 @@ const getData = async () => {
   }
 };
 
-export default getData;
+export default addData;
