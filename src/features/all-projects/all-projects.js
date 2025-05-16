@@ -2,60 +2,27 @@ import React, { useEffect, useState, useRef, use } from "react";
 import left_line from "../../assets/svgs/left_line.svg";
 import right_line from "../../assets/svgs/right_line.svg";
 
-import property1 from "../../assets/allprojects/1.webp";
-import property2 from "../../assets/allprojects/2.webp";
-import property3 from "../../assets/allprojects/3.webp";
-import property4 from "../../assets/allprojects/4.webp";
+import { ReactComponent as Rupee } from "../../assets/featuredprojects/rupee.svg";
 
 import styles from "./all-projects.module.css";
 import { Link } from "react-router-dom";
+import getData from "../../gateway/getProjects.js";
 
 function AllProjects(props) {
-  const [properties, setProperties] = useState([
-    {
-      property_img: property1,
-      property_name: "",
-      property_location: "",
-      price: "",
-      property_desc: "",
-    },
-    {
-      property_img: property2,
-      property_name: "",
-      property_location: "",
-      price: "",
-      property_desc: "",
-    },
-    {
-      property_img: property1,
-      property_name: "",
-      property_location: "",
-      price: "",
-      property_desc: "",
-    },
-    {
-      property_img: property2,
-      property_name: "",
-      property_location: "",
-      price: "",
-      property_desc: "",
-    },
-    {
-      property_img: property3,
-      property_name: "",
-      property_location: "",
-      price: "",
-      property_desc: "",
-    },
-    {
-      property_img: property4,
-      property_name: "",
-      property_location: "",
-      price: "",
-      property_desc: "",
-    },
-  ]);
+  const [properties, setProperties] = useState([]);
 
+  const fetchData = async () => {
+    try {
+      const response = await getData();
+      setProperties(response);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
+  
   return (
     <>
       <div>
@@ -80,15 +47,15 @@ function AllProjects(props) {
         </div>
         <div className={styles.row_two}>
           {properties?.map((id, index) => (
-            <Link to="/projectDetails" className={styles.link} key={index}>
+            <Link to={`/projectDetails/${index}`} className={styles.link} key={index}>
               <div className={styles.card}>
                 <div className={styles.property_img}>
-                  <img src={properties[index].property_img} className={styles.banner_img} width="400px" height="500px" />
+                  <img src={properties[index].Banner_Image_Link} className={styles.banner_img} width="600px" height="400px" />
                 </div>
-                <div className={styles.property_name}>Luxurious Living Spaces</div>
-                <div className={styles.property_location}>101 Serene Avenue, Maplewood Gardens.</div>
-                <div className={styles.price}>90000</div>
-                <div className={styles.property_desc}>4 Bedroom 2 Bathroom 360 Sqft</div>
+                <div className={styles.property_name}>{properties[index].Project_Name}</div>
+                <div className={styles.property_location}>{properties[index].Property_Address}</div>
+                <div className={styles.price}><Rupee width={15} height={14} className={styles.rupee_sign} />{properties[index].Property_Price}</div>
+                <div className={styles.property_desc}>{properties[index].Property_Bedroom} Bedroom {properties[index].Property_Bathroom} Bathroom {properties[index].Property_SqFt} Sqft</div>
               </div>
             </Link>
           ))}

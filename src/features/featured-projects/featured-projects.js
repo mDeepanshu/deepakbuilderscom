@@ -1,10 +1,6 @@
 import React, { useEffect, useState, useRef, use } from "react";
 import styles from "./featured-project.module.css";
 import building from "../../assets/featuredprojects/building.svg";
-import property1 from "../../assets/featuredprojects/property-1.png";
-import property2 from "../../assets/featuredprojects/property-2.png";
-import property3 from "../../assets/featuredprojects/property-3.png";
-import property4 from "../../assets/featuredprojects/property-4.png";
 import { ReactComponent as ArrowRight } from "../../assets/featuredprojects/arrowright.svg";
 import { ReactComponent as ArrowLeft } from "../../assets/featuredprojects/arrowleft.svg";
 import { Link } from "react-router-dom";
@@ -12,53 +8,25 @@ import shower from "../../assets/featuredprojects/shower.svg";
 import area from "../../assets/featuredprojects/area.svg";
 import location from "../../assets/featuredprojects/location.svg";
 import bed from "../../assets/featuredprojects/bed.svg";
-
+import { ReactComponent as Rupee } from "../../assets/featuredprojects/rupee.svg";
+import getData from "../../gateway/getProjects.js";
 
 function FeaturedProjects() {
-  const [properties, setProperties] = useState([
-    {
-      property_img: property1,
-      property_name: "",
-      property_location: "",
-      price: "",
-      property_desc: "",
-    },
-    {
-      property_img: property2,
-      property_name: "",
-      property_location: "",
-      price: "",
-      property_desc: "",
-    },
-    {
-      property_img: property1,
-      property_name: "",
-      property_location: "",
-      price: "",
-      property_desc: "",
-    },
-    {
-      property_img: property2,
-      property_name: "",
-      property_location: "",
-      price: "",
-      property_desc: "",
-    },
-    {
-      property_img: property3,
-      property_name: "",
-      property_location: "",
-      price: "",
-      property_desc: "",
-    },
-    {
-      property_img: property4,
-      property_name: "",
-      property_location: "",
-      price: "",
-      property_desc: "",
-    },
-  ]);
+  const [properties, setProperties] = useState([]);
+
+  const fetchData = async () => {
+    try {
+      const response = await getData();
+      setProperties(response);
+      console.log(response);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   const containerRef = useRef(null);
   const [isDragging, setIsDragging] = useState(false);
@@ -108,24 +76,46 @@ function FeaturedProjects() {
             </div>
             <div className={styles.arrowBtnGrp}>
               <div className={styles.arrowBtns}>
-              <ArrowLeft width={34} height={34} onClick={() => move(true)}/>
+                <ArrowLeft width={34} height={34} onClick={() => move(true)} />
               </div>
               <div className={styles.arrowBtns}>
-              <ArrowRight width={34} height={34} onClick={() => move(false)}/>
+                <ArrowRight width={34} height={34} onClick={() => move(false)} />
               </div>
             </div>
           </div>
-          <div className={styles.scroll_section} ref={containerRef} onMouseDown={handleMouseDown} onMouseMove={handleMouseMove} onMouseLeave={handleMouseUp} onMouseUp={handleMouseUp}>
+          <div
+            className={styles.scroll_section}
+            ref={containerRef}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseUp}
+            onMouseUp={handleMouseUp}
+          >
             {properties?.map((id, index) => (
-              <div key={id} className={styles.property_card}>
-                <div className={styles.viewDetailesBtn}> <Link to="/projectDetails" className={styles.projectLink}>View Details</Link></div>
-                <div className={styles.property_img}>
-                  <img src={properties[index].property_img} className={styles.banner_img} />
+              <div key={index} className={styles.property_card}>
+                <div className={styles.viewDetailesBtn}>
+                  {" "}
+                  <Link to="/projectDetails" className={styles.projectLink}>
+                    View Details
+                  </Link>
                 </div>
-                <div className={styles.property_name}><b>Luxurious Living Spaces</b></div>
-                <div className={styles.property_location}><img src={location}/>101 Serene Avenue, Maplewood Gardens.</div>
-                <div className={styles.price}>90000</div>
-                <div className={styles.property_desc}><img src={shower}/>4 Bedroom <img src={bed}/> 2 Bathroom <img src={area}/> 360 Sqft</div>
+                <div className={styles.property_img}>
+                  <img src={properties[index].Banner_Image_Link} className={styles.banner_img} />
+                </div>
+                <div className={styles.property_name}>
+                  <b>{properties[index].Project_Name}</b>
+                </div>
+                <div className={styles.property_location}>
+                  <img src={location} />
+                  {properties[index].Property_Address}
+                </div>
+                <div className={styles.price}>
+                  <Rupee width={15} height={14} className={styles.rupee_sign} />
+                  {properties[index].Property_Price}
+                </div>
+                <div className={styles.property_desc}>
+                  <img src={shower} />{properties[index].Property_Bedroom} Bedroom <img src={bed} /> {properties[index].Property_Bathroom} Bathroom <img src={area} /> {properties[index].Property_SqFt} Sqft
+                </div>
               </div>
             ))}
           </div>
