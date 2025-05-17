@@ -58,8 +58,8 @@ function Header(props) {
                 </div>
                 <div className={styles.verticalLine}></div>
                 <div className={styles.popover_col2}>
-                  <div>+91-9898986565</div>
-                  <div>+91-9898986565</div>
+                  <div>+91-7067999777</div>
+                  <div>+91-7879999777</div>
                 </div>
               </div>
             )}

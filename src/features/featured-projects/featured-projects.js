@@ -95,7 +95,7 @@ function FeaturedProjects() {
               <div key={index} className={styles.property_card}>
                 <div className={styles.viewDetailesBtn}>
                   {" "}
-                  <Link to="/projectDetails" className={styles.projectLink}>
+                  <Link to={`/projectDetails/${index}`} className={styles.projectLink}>
                     View Details
                   </Link>
                 </div>
