@@ -9,6 +9,7 @@ import Home from "./features/home/home";
 import AllProjects from "./features/all-projects/all-projects";
 import ProjectDetails from "./features/project-detail/project-detail";
 import Admin from "./features/admin/admin";
+import LocateUs from './features/locate-us/locate-us';
 
 const router = createBrowserRouter([
 	{
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
 				path: 'admin',
 				element: <Admin />
 			},
+			{
+				path: 'locateUs',
+				element: <LocateUs />
+			}
 		],
 		// errorElement: <Error />
 	}
