@@ -33,20 +33,22 @@ function FeaturedProjects() {
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
 
-  const handleMouseDown = (e) => {
-    if (!containerRef.current) return;
-    setIsDragging(true);
-    setStartX(e.pageX - containerRef.current.offsetLeft);
-    setScrollLeft(containerRef.current.scrollLeft);
-  };
+const handleDown = (e) => {
+  if (!containerRef.current) return;
+  const pageX = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
+  setIsDragging(true);
+  setStartX(pageX - containerRef.current.offsetLeft);
+  setScrollLeft(containerRef.current.scrollLeft);
+};
 
-  const handleMouseMove = (e) => {
-    if (!isDragging || !containerRef.current) return;
-    e.preventDefault();
-    const x = e.pageX - containerRef.current.offsetLeft;
-    const walk = x - startX; // Multiplier for faster scrolling
-    containerRef.current.scrollLeft = scrollLeft - walk;
-  };
+const handleMove = (e) => {
+  if (!isDragging || !containerRef.current) return;
+  e.preventDefault(); // Prevent scrolling while dragging
+  const pageX = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
+  const x = pageX - containerRef.current.offsetLeft;
+  const walk = x - startX;
+  containerRef.current.scrollLeft = scrollLeft - walk;
+};
 
   const handleMouseUp = () => {
     setIsDragging(false);
@@ -67,7 +69,7 @@ function FeaturedProjects() {
               <p className={styles.properties_line}></p> PROPERTIES
             </div>
             <div className={styles.label_two}>Feature Properties</div>
-            <div>Lorem ipsum dolor sit amet consectetur. Accumsan lacus neque nunc convallis eleifend vitae et felis potenti.</div>
+            <div>Discover standout homes carefully selected for their style, location, and value. From modern apartments to luxury estates, these listings offer exceptional living and investment opportunities.</div>
             <div>
               <button type="button" className={styles.view_property_btn}>
                 <div className={styles.btn_label}>View Properties</div>
@@ -86,10 +88,14 @@ function FeaturedProjects() {
           <div
             className={styles.scroll_section}
             ref={containerRef}
-            onMouseDown={handleMouseDown}
-            onMouseMove={handleMouseMove}
+            onMouseDown={handleDown}
+            onMouseMove={handleMove}
             onMouseLeave={handleMouseUp}
             onMouseUp={handleMouseUp}
+            onTouchStart={handleDown}
+            onTouchMove={handleMove}
+            onTouchEnd={handleMouseUp}
+            onTouchCancel={handleMouseUp}
           >
             {properties?.map((id, index) => (
               <div key={index} className={styles.property_card}>

@@ -20,7 +20,7 @@ function App() {
   return (
     <>
       <Header handlePageChange={handlePage} isHomePage={isMainPage}></Header>
-      <Outlet/>
+      <Outlet />
       <Footer></Footer>
     </>
   );
