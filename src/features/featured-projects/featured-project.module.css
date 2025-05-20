@@ -1,216 +1,240 @@
-.container{
-    height: 80vh;
+.container {
+  /* height: 80vh; */
 }
 
-.row_one{
-    padding-top: 2rem;
-    display: flex;
+.row_one {
+  padding-top: 2rem;
+  display: flex;
 }
 
-.description{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 28%;
-    gap: 20px;
-    padding: 0 3rem;
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 28%;
+  gap: 20px;
+  padding: 0 3rem;
 }
 
-.label_one{
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    color: #2F3D7E;
-    text-transform: uppercase;
-    font-size: clamp(14.5px, 1.042vw, 40px);
-    font-weight: 500;
-    line-height: 120%;
+.label_one {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #2f3d7e;
+  text-transform: uppercase;
+  font-size: clamp(14.5px, 1.042vw, 40px);
+  font-weight: 500;
+  line-height: 120%;
 }
 
-.label_two{
-    font-size: 32px;
-    font-weight: 700;
+.label_two {
+  font-size: 32px;
+  font-weight: 700;
 }
 
-.scroll_section{
-
-    grid-column: center-start / -1;
-    display: grid;
-    grid-auto-flow: column;
-    gap: 1rem;
-    overflow: hidden;
-    padding-bottom: 1rem;
-    padding-right: var(--page-margin);
-    /* display: flex; */
-    width: 72%;
-    background-color: #F6F8FF;
-    border-radius: 30px 0 0 30px;
-    height: 28rem;
-    /* overflow-x: auto; */
+.scroll_section {
+  grid-column: center-start / -1;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 1rem;
+  overflow: hidden;
+  padding-bottom: 1rem;
+  padding-right: var(--page-margin);
+  /* display: flex; */
+  width: 72%;
+  background-color: #f6f8ff;
+  border-radius: 30px 0 0 30px;
+  height: 28rem;
+  /* overflow-x: auto; */
 }
 
-.property_card{
-    /* display: block; */
-    margin: 2rem;
-    /* padding: 1rem; */
-    width: 20rem;
-    text-align: center;
-    background-color: white;
-    border-radius: 0 0 10px 10px;
-    user-select: none;
+.property_card {
+  /* display: block; */
+  margin: 2rem;
+  /* padding: 1rem; */
+  width: 20rem;
+  text-align: center;
+  background-color: white;
+  border-radius: 0 0 10px 10px;
+  user-select: none;
 
-    position: relative;
+  position: relative;
 }
 
-.viewDetailesBtn{
-    z-index: 3;
-    position: absolute;
-    top: 5%;
-    left: 5%;
+.viewDetailesBtn {
+  z-index: 3;
+  position: absolute;
+  top: 5%;
+  left: 5%;
 
-    border-radius: 20px;
-    background: #FFFFFF;
-    color: #131110;
-    font-size: 13px;
-    line-height: 120%;
-    padding: 4px 12px;
-    position: absolute;
-    transition: all 0.3s ease-in;
-    cursor: pointer;
+  border-radius: 20px;
+  background: #ffffff;
+  color: #131110;
+  font-size: 13px;
+  line-height: 120%;
+  padding: 4px 12px;
+  position: absolute;
+  transition: all 0.3s ease-in;
+  cursor: pointer;
 }
 
 .property_card > * {
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.property_card > :nth-last-child(-n+3)  {
-    /* Your styles here */
-    color: #808080
-  }
+.property_card > :nth-last-child(-n + 3) {
+  /* Your styles here */
+  color: #808080;
+}
 
-.properties_line{
-    height: 1px;
-    width: 25px;
-    background-color: #2F3D7E;
+.properties_line {
+  height: 1px;
+  width: 25px;
+  background-color: #2f3d7e;
 }
 .property_img {
-    position: relative; /* FIX: Ensure the shine effect is positioned relative to this */
-    height: 50%;
-    overflow: hidden;
+  position: relative; /* FIX: Ensure the shine effect is positioned relative to this */
+  height: 50%;
+  overflow: hidden;
 }
 
 .banner_img {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-    border-radius: 10px 10px 0 0;
-    transition: scale 1s ease-out;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  transition: scale 1s ease-out;
 }
 
 .banner_img:hover {
-    scale: 1.2;
+  scale: 1.2;
 }
 
 /* Move the shine effect to .property_img */
 .property_img:after {
-    content: "";
-    position: absolute;
-    width: 200%;
-    height: 0%;
-    left: 50%;
-    top: 50%;
-    background-color: rgba(255, 255, 255, 0.3);
-    transform: translate(-50%, -50%) rotate(-45deg);
-    z-index: 1;
-    transition: height 600ms linear, background-color 600ms linear;
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 0%;
+  left: 50%;
+  top: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%) rotate(-45deg);
+  z-index: 1;
+  transition: height 600ms linear, background-color 600ms linear;
 }
 
 .property_img:hover:after {
-    height: 250%;
-    background-color: transparent;
+  height: 250%;
+  background-color: transparent;
 }
 
 .view_property_btn {
-    display: flex;
-    align-items: center;
-    /* font-size: 1.25rem; */
-    font-weight: bold;
-    line-height: 1;
-    text-transform: uppercase;
-    position: relative;
-    border: .1875em solid;
-    padding: 1em;
-    color: rebeccapurple;
-    background: transparent;
-    border-radius: .125em;
-    transition: background .3s;
-    cursor: pointer;
-    
-    &:hover,
-    &:focus {
-        color: white;
-        background: rebeccapurple;
-        border-color: rebeccapurple;
-    }
-    
-    &:active {
-        top: .08em;
-    }
+  display: flex;
+  align-items: center;
+  /* font-size: 1.25rem; */
+  font-weight: bold;
+  line-height: 1;
+  text-transform: uppercase;
+  position: relative;
+  border: 0.1875em solid;
+  padding: 1em;
+  color: rebeccapurple;
+  background: transparent;
+  border-radius: 0.125em;
+  transition: background 0.3s;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: white;
+    background: rebeccapurple;
+    border-color: rebeccapurple;
+  }
+
+  &:active {
+    top: 0.08em;
+  }
 }
 
-.btn_label{
-    font-size: 1rem;
-    padding-right: 5px;
+.btn_label {
+  font-size: 1rem;
+  padding-right: 5px;
 }
 
 /* Helper Class to hide text visually but keep it accessible for screen reader or other assistive software. */
 .visually-hidden {
-    position: absolute;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
 }
 
-.arrowBtnGrp{
-    display: flex;
-    gap: 20px;
+.arrowBtnGrp {
+  display: flex;
+  gap: 20px;
 }
 
-.arrowBtns{
-    display:flex;
-    align-items: center;
-    background: #FFFFFF;
-    border: 1px solid #131110;
-    border-radius: 5px;
-    transition: all 0.3s ease-in;
+.arrowBtns {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #131110;
+  border-radius: 5px;
+  transition: all 0.3s ease-in;
+  cursor: pointer;
 }
 
-.arrowBtns:hover{
-    background-color: #2F3D7E;
-    border-color: #2F3D7E;
-    color: white;
+.arrowBtns:hover {
+  background-color: #2f3d7e;
+  border-color: #2f3d7e;
+  color: white;
 }
 
-.projectLink{
-    color: black;
-    text-decoration: none;
+.projectLink {
+  color: black;
+  text-decoration: none;
 }
 
-.property_desc{
-    font-size: 0.8rem;
+.property_desc {
+  font-size: 0.8rem;
 }
 
 .property_desc > img {
-    width: 1.5rem;
-    height: 1.5rem;
-    margin: 0 0.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0 0.5rem;
 }
 
-.rupee_sign{
-    color: green;
+.rupee_sign {
+  color: green;
+}
+
+@media screen and (max-width: 768px) {
+  .description {
+    width: 70%;
+    padding: 2rem 3rem;
+  }
+  .scroll_section {
+    width: 100%;
+    padding-right: 0;
+    border-radius: 0;
+  }
+
+  .row_one {
+    flex-direction: column;
+    padding-top: 0;
+  }
+  .property_card {
+    width: 95%;
+  }
+
+  .property_desc{
+    font-size: 0.7rem;
+  }
 }

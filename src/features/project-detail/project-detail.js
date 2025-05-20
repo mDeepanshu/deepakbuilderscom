@@ -1,18 +1,12 @@
 import React, { useEffect, useState, useRef, use } from "react";
 import styles from "./project-detail.module.css";
-import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
-import banner1 from "../../assets/project-details/one.jpg";
-import banner2 from "../../assets/project-details/two.jpg";
-import banner3 from "../../assets/project-details/three.jpg";
-import banner4 from "../../assets/project-details/four.jpg";
+
+
 import { ReactComponent as ArrowRight } from "../../assets/featuredprojects/arrowright.svg";
 import { ReactComponent as ArrowLeft } from "../../assets/featuredprojects/arrowleft.svg";
 import { ReactComponent as Rupee } from "../../assets/featuredprojects/rupee.svg";
 import { useParams } from "react-router-dom";
 import getData from "../../gateway/getProjects.js";
-
-import video from "../../assets/project-details/property.mp4";
 
 function ProjectDetails() {
   const { id } = useParams();
@@ -56,8 +50,8 @@ function ProjectDetails() {
         <div className={styles.projectDetailContainer}>
           <div className={styles.mainDetails}>
             <div className={styles.pHeading}>
-              <span>Luxurious Living Spaces</span>
-              <span>
+              <span>{projectDetails.Project_Name}</span>
+              <span className={styles.pPrice}>
                 <Rupee width={34} height={34} onClick={() => move(false)} className={styles.arrow_svg} />
                 {projectDetails.Property_Price}
               </span>
@@ -82,7 +76,7 @@ function ProjectDetails() {
             <div className={styles.pDescription}>
               <h1>About Property</h1>
               <p className={styles.properties_line}></p>
-              <p>{projectDetails.Property_Description}</p>
+              <p className={styles.property_description}>{projectDetails.Property_Description}</p>
             </div>
             <div className={styles.ammenities}></div>
             <div className={styles.pvideo}>

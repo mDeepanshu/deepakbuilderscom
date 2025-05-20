@@ -11,6 +11,7 @@ import { useLocation } from "react-router-dom";
 function Header(props) {
   const [isVisible, setIsVisible] = useState(true);
   const [openPopover, setOpenPopover] = useState(false);
+  const [openMenuPopover, setOpenMenuPopover] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [open, setOpen] = useState(false);
 
@@ -21,6 +22,10 @@ function Header(props) {
 
   const togglePopover = () => {
     setOpenPopover((prev) => !prev);
+  };
+
+  const toggleMenuPopover = () => {
+    setOpenMenuPopover((prev) => !prev);
   };
 
   useEffect(() => {
@@ -40,16 +45,24 @@ function Header(props) {
   return (
     <>
       <div>
-        <div className={`${styles.container} ${isVisible ? styles.visible : styles.hidden} ${location.pathname !== "/" ? styles.notHomePage : ""}`}>
+        <div
+          className={`${styles.container} ${isVisible ? styles.visible : styles.hidden} ${
+            location.pathname !== "/" ? styles.notHomePage : ""
+          }`}
+        >
           <div onClick={() => navigate(true)}>
-            <Link to="/" className={styles.logo}>RK CONSTRUCTION</Link>
+            <Link to="/" className={styles.logo}>
+              RK CONSTRUCTION
+            </Link>
           </div>
           <div className={styles.icons}>
             <div onClick={() => navigate(false)}>
-              <Link to="/allProjects" className={styles.contact}>OUR PROJECT</Link>
+              <Link to="/allProjects" className={styles.contact}>
+                OUR PROJECT
+              </Link>
             </div>
             <div className={styles.phone_icn}>
-              <img src={phone} width="43px" height="43px" onClick={togglePopover} />
+              <img src={phone} width="43px" height="43px" onClick={togglePopover} className={styles.phone_icon} />
             </div>
             {openPopover && (
               <div className={styles.popover}>
@@ -63,8 +76,22 @@ function Header(props) {
                 </div>
               </div>
             )}
-            <div>
-              <img src={menu} width="43px" height="43px" />
+            <div className={styles.menu_icn}>
+              <img src={menu} width="43px" height="43px" onClick={toggleMenuPopover} className={styles.menu_icon} />
+              {openMenuPopover && (
+                <div className={styles.popover2}>
+                  <Link to="/allProjects" className={styles.popover2_col1}>
+                    OUR PROJECT
+                  </Link>
+                  <div className={styles.popover2_col1}>
+                    <div onClick={() => setOpen(true)}>WRITE TO US</div>
+                  </div>
+                  {/* <div className={styles.popover_col2}> */}
+                  <div>+91-7067999777</div>
+                  <div>+91-7879999777</div>
+                  {/* </div> */}
+                </div>
+              )}
             </div>
           </div>
         </div>

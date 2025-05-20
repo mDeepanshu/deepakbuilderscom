@@ -29,6 +29,11 @@
     padding-right: 5vw;
 }
 
+.pPrice{
+    display: flex;
+    align-items: center;
+}
+
 .pHeading {
     display: flex;
     justify-content: space-between;
@@ -42,6 +47,12 @@
     overflow: hidden;
     padding-bottom: 2rem;
 
+}
+
+.pDescription,.property_description {
+    color: black;
+    /* font-weight: 400;
+    padding-bottom: 2rem; */
 }
 
 .pImages{
@@ -99,9 +110,9 @@
 }
 
 .properties_line{
-    height: 5px;
     width: 15rem;
     background-color: #2F3D7E;
+    margin-bottom: 1rem;
 }
 
 .videoContainer {
@@ -120,4 +131,26 @@
 
 .arrow_svg{
     cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .bannerHeading {
+        font-size: 2rem;
+    }
+
+    .mainDetails {
+        width: 90%;
+    }
+
+    .sideDetails {
+        display: none;
+    }
+    .pHeading {
+        font-size: 2rem;
+    }
+
+}
+
+h1{
+    margin-bottom: 0;
 }

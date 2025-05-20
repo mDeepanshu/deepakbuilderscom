@@ -1,40 +1,106 @@
-.container{
-    height: 100vh;
-    /* padding-top: 4rem; */
-    background: linear-gradient(0deg, #fdfaef, #fdfcfb);
+.container {
+  /* height: 100vh; */
+  padding-top: 2rem;
+  background: linear-gradient(0deg, #fdfaef, #fdfcfb);
 }
 
-.row_one{
+.row_one {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem 0;
+}
+
+.title {
+  font-weight: 600;
+  color: #27262e;
+  font-size: 20px;
+  padding: 1rem 1rem;
+}
+
+.row_two {
+  display: flex;
+  justify-content: center;
+}
+
+.title_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.line_wrapper {
+  display: flex;
+  max-width: 400px;
+  width: 20%;
+}
+
+.title {
+  font-weight: 600;
+  color: #27262e;
+  font-size: 20px;
+  padding: 0 1rem;
+  font-size: 1rem;
+}
+
+.line_img {
+  width: 400px;
+  height: 15px;
+}
+
+.description {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1.25;
+  padding: 1.5rem 5rem 0;
+}
+
+.row_three {
+  display: flex;
+  justify-content: center;
+  padding-top: 4rem;
+  padding-bottom: 1rem;
+  gap: 1.5rem;
+  user-select: none;
+}
+
+.quality_imgs {
+  /* width: 22%; */
+  /* height: auto; */
+}
+
+/* .quality_imgs:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+} */
+
+@media screen and (max-width: 768px) {
+  .description {
+    font-size: 1.5rem;
+  }
+
+  .quality_imgs {
+    width: 80%;
+  }
+
+  .row_three {
+    /* width: 80%;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+    -ms-overflow-style: none;  */
+    padding-left: 2rem;
+    padding-right: 2rem; 
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 3rem 1rem 0;
+    overflow-x: auto;
+    justify-content: flex-start;
+    /* gap: 1rem; */
+    user-select: none;
+  }
 }
 
-.title{
-    font-weight: 600;
-    color: #27262E;
-    font-size: 20px;
-    padding: 1rem 1rem;
-}
-
-.row_two{
-    display: flex;
-    justify-content: center;
-}
-
-.description{
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: 300;
-    line-height: 1.25;
-
-    padding: 4rem 5rem 0;
-}
-
-.row_three{
-    display: flex;
-    justify-content: center;
-    padding-top: 4rem;
-    gap: 1.5rem;
+.row_three::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }

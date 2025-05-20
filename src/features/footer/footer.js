@@ -14,14 +14,9 @@ function Footer() {
           <img src={location} alt="logo" className={styles.logo} />
         </div>
         <div className={styles.textContainer}>
-          {/* <div className={styles.headings}>
-            <div>RK Constructions</div>
-            <div>Contact Info.</div>
-            <div>Quick Links</div>
-          </div> */}
           <div className={styles.lines}>
             <div className={styles.description}>
-              <div className={styles.heading}>RK Constructions</div>
+              <div className={styles.heading}>RK Constructions <button>Read More</button></div>
               <div>
                 Established in 1990, Godrej Properties is the first real estate company to have ISO certification. The company is currently
                 developing landmark projects in 12 cities across India covering over 18.58 million square meters. Godrej Properties is known
@@ -29,7 +24,7 @@ function Footer() {
               </div>
             </div>
             <div className={styles.contact}>
-              <div className={styles.heading}>Contact Info.</div>
+              <div className={styles.heading}>Contact Info. <button>Read More</button></div>
               <div>
                 <img src={location_svg} /> <p>Sushila Parisar, Amkhera Road, Adhartal, Jabalpur</p>
               </div>
@@ -42,8 +37,8 @@ function Footer() {
               </div>
             </div>
             <div className={styles.quickLinks}>
-              <div className={styles.heading}>Quick Links</div>
-              <ul>
+              <div className={styles.heading}>Quick Links <button>Read More</button></div>
+              <ul className={styles.quick_links_list}>
                 <li>
                   <Link to={`/allProjects`}>All Projects</Link>
                 </li>
