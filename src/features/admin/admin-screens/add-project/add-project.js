@@ -9,7 +9,13 @@ import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 
 function AddProject() {
-  const { register, handleSubmit, reset, getValues } = useForm();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    getValues,
+    formState: { errors },
+  } = useForm();
 
   const [state, setState] = useState({
     open: false,
@@ -20,15 +26,6 @@ function AddProject() {
   const handleClose = () => {
     setState({ ...state, open: false });
   };
-
-  // const toBase64 = (file) => {
-  //   return new Promise((resolve, reject) => {
-  //     const reader = new FileReader();
-  //     reader.readAsDataURL(file);
-  //     reader.onload = () => resolve(reader.result);
-  //     reader.onerror = (error) => reject(error);
-  //   });
-  // };
 
   const onSubmit = async (data) => {
     const formData = getValues();
@@ -124,7 +121,18 @@ function AddProject() {
           <div style={{ marginBottom: "1rem" }}>
             <label>Project Video:</label>
             <br />
-            <input type="file" {...register("Project_Video")} accept="video/*" />
+            <input
+              type="file"
+              accept="video/*"
+              {...register("Project_Video", {
+                validate: {
+                  lessThan40MB: (files) => {
+                    return files?.[0]?.size < 40 * 1024 * 1024 || "File size should be less than 40MB";
+                  },
+                },
+              })}
+            />
+            {errors.Project_Video && <p style={{ color: "red" }}>{errors.Project_Video.message}</p>}
           </div>
 
           {/* Property Description */}
@@ -141,7 +149,9 @@ function AddProject() {
             <input type="text" {...register("Property_Location")} required />
           </div>
 
-          <button type="submit">Submit</button>
+          <button type="submit" className={styles.submitButton}>
+            Submit
+          </button>
         </form>
       </div>
       <Box sx={{ width: 500 }}>

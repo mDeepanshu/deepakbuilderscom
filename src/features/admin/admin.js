@@ -1,10 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
 import styles from "./admin.module.css";
-import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
 import AddProject from "./admin-screens/add-project/add-project";
 import AllProjects from "./admin-screens/all-projects/all-projects";
-function Admin() {
+
+function Admin({ handleAdminPageChange }) {
   const [selectedTab,setSelectedTab] = useState("tab1");
   const tabsArray = [
     { id: "tab1", name: "tab1", label: "Add Project" },
@@ -18,7 +17,7 @@ function Admin() {
     <>
       <div className={styles.admin_container}>
         <h1>ADMIN SETTINGS</h1>
-        <Link to="/">BACK</Link>
+        <div className={styles.back_link} onClick={() => handleAdminPageChange(false)}>BACK</div>
         <div>
           <div className={styles.tabset}>
             {tabsArray.map((tab) => (

@@ -4,24 +4,31 @@ import React, { useEffect, useState, useRef, use } from "react";
 import { Outlet } from "react-router-dom";
 
 import Header from "./features/header/header";
-import Home from "./features/home/home";
-import OurValues from "./features/our-values/our_values";
 import Footer from "./features/footer/footer";
-import FeaturedProjects from "./features/featured-projects/featured-projects";
-import AllProjects from "./features/all-projects/all-projects";
+import Admin from "./features/admin/admin";
 
 function App() {
   const [isMainPage, setMainPage] = useState(true);
+  const [isAdminPage, setAdminPage] = useState(false);
 
   const handlePage = (val) => {
     setMainPage(val);
   };
 
+  const handleAdminPage = (val) => {
+    setAdminPage(val);
+  };
+
   return (
     <>
-      <Header handlePageChange={handlePage} isHomePage={isMainPage}></Header>
-      <Outlet />
-      <Footer></Footer>
+      {isAdminPage && <Admin handleAdminPageChange={handleAdminPage} />}
+      {!isAdminPage && (
+        <>
+          <Header handlePageChange={handlePage} handleAdminPageChange={handleAdminPage} isHomePage={isMainPage}></Header>
+          <Outlet />
+          <Footer></Footer>
+        </>
+      )}
     </>
   );
 }
