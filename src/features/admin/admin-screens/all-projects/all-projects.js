@@ -1,9 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import styles from "./all-projects.module.css";
-import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
-import { useForm, Controller } from "react-hook-form";
-import { TextField, Button, Box, Typography } from "@mui/material";
+import { Button } from "@mui/material";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import  getData from "../../../../gateway/getProjects.js";
 
@@ -15,7 +12,6 @@ function AllProjects() {
         const fetchData = async () => {
           try {
             const result = await getData();
-            console.log(result);
             setProjects(result);
           } catch (error) {
             console.error(error);

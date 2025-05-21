@@ -18,7 +18,6 @@ function FeaturedProjects() {
     try {
       const response = await getData();
       setProperties(response);
-      console.log(response);
     } catch (error) {
       console.error("Error fetching data:", error);
     }

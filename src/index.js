@@ -33,10 +33,6 @@ const router = createBrowserRouter([
 				element: <ProjectDetails />
 			},
 			{
-				path: 'admin',
-				element: <Admin />
-			},
-			{
 				path: 'locateUs',
 				element: <LocateUs />
 			}

@@ -27,7 +27,6 @@ function ProjectDetails() {
     const project = data[id];
     if (project) {
       setProjectDetails(project);
-      console.log(project.Project_Video_Link);
     } else {
       console.error("Project not found");
     }

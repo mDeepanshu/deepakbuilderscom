@@ -1,4 +1,4 @@
-.admin_container{
+.admin_container {
   padding: 4rem 3rem 0 3rem;
   font: 16px/1.5em "Overpass", "Open Sans", Helvetica, sans-serif;
   color: #333;
@@ -6,77 +6,77 @@
 }
 
 .tabset > .radio_input[type="radio"] {
-    position: absolute;
-    left: -200vw;
-  }
-  
-  .tabset .tabPanel {
-    display: none;
-  }
-  
-  .tabset > .radio_input:first-child:checked ~ .tabPanels > .tabPanel:first-child,
-  .tabset > .radio_input:nth-child(3):checked ~ .tabPanels > .tabPanel:nth-child(2),
-  .tabset > .radio_input:nth-child(5):checked ~ .tabPanels > .tabPanel:nth-child(3),
-  .tabset > .radio_input:nth-child(7):checked ~ .tabPanels > .tabPanel:nth-child(4),
-  .tabset > .radio_input:nth-child(9):checked ~ .tabPanels > .tabPanel:nth-child(5),
-  .tabset > .radio_input:nth-child(11):checked ~ .tabPanels > .tabPanel:nth-child(6) {
-    display: block;
-  }
+  position: absolute;
+  left: -200vw;
+}
 
-  .tabset > .tab_label {
-    position: relative;
-    display: inline-block;
-    padding: 15px 15px 25px;
-    border: 1px solid transparent;
-    border-bottom: 0;
-    cursor: pointer;
-    font-weight: 600;
-  }
-  
-  .tabset > .tab_label::after {
-    content: "";
-    position: absolute;
-    left: 15px;
-    bottom: 10px;
-    width: 22px;
-    height: 4px;
-    background: #8d8d8d;
-  }
-  
-  .radio_input:focus-visible + .tab_label {
-    outline: 2px solid rgba(0,102,204,1);
-    border-radius: 3px;
-  }
-  
-  .tabset > .tab_label:hover,
-  .tabset > .radio_input:focus + .tab_label,
-  .tabset > .radio_input:checked + .tab_label {
-    color: #06c;
-  }
-  
-  .tabset > .tab_label:hover::after,
-  .tabset > .radio_input:focus + .tab_label::after,
-  .tabset > .radio_input:checked + .tab_label::after {
-    background: #06c;
-  }
-  
-  .tabset > .radio_input:checked + .tab_label {
-    border-color: #ccc;
-    border-bottom: 1px solid #fff;
-    margin-bottom: -1px;
-  }
-  
-  .tabPanel {
-    padding: 30px 0;
-    border-top: 1px solid #ccc;
-  }
+.tabset .tabPanel {
+  display: none;
+}
 
-  /* *,
-  *:before,
-  *:after {
-    box-sizing: border-box;
-  }
-  
-  .tabset {
-    max-width: 65em;
-  } */
+.tabset > .radio_input:first-child:checked ~ .tabPanels > .tabPanel:first-child,
+.tabset > .radio_input:nth-child(3):checked ~ .tabPanels > .tabPanel:nth-child(2),
+.tabset > .radio_input:nth-child(5):checked ~ .tabPanels > .tabPanel:nth-child(3),
+.tabset > .radio_input:nth-child(7):checked ~ .tabPanels > .tabPanel:nth-child(4),
+.tabset > .radio_input:nth-child(9):checked ~ .tabPanels > .tabPanel:nth-child(5),
+.tabset > .radio_input:nth-child(11):checked ~ .tabPanels > .tabPanel:nth-child(6) {
+  display: block;
+}
+
+.tabset > .tab_label {
+  position: relative;
+  display: inline-block;
+  padding: 15px 15px 25px;
+  border: 1px solid transparent;
+  border-bottom: 0;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.tabset > .tab_label::after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  bottom: 10px;
+  width: 22px;
+  height: 4px;
+  background: #8d8d8d;
+}
+
+.radio_input:focus-visible + .tab_label {
+  outline: 2px solid rgba(0, 102, 204, 1);
+  border-radius: 3px;
+}
+
+.tabset > .tab_label:hover,
+.tabset > .radio_input:focus + .tab_label,
+.tabset > .radio_input:checked + .tab_label {
+  color: #06c;
+}
+
+.tabset > .tab_label:hover::after,
+.tabset > .radio_input:focus + .tab_label::after,
+.tabset > .radio_input:checked + .tab_label::after {
+  background: #06c;
+}
+
+.tabset > .radio_input:checked + .tab_label {
+  border-color: #ccc;
+  border-bottom: 1px solid #fff;
+  margin-bottom: -1px;
+}
+
+.tabPanel {
+  padding: 30px 0;
+  border-top: 1px solid #ccc;
+}
+
+.back_link{
+  cursor: pointer;
+  color: #06c;
+  text-decoration: underline;
+  padding: 1rem 0;
+}
+.back_link:hover{
+  color: #04a;
+}

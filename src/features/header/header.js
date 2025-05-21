@@ -96,7 +96,7 @@ function Header(props) {
           </div>
         </div>
       </div>
-      <Callback open={open} onClose={() => setOpen(false)}></Callback>
+      <Callback open={open} onClose={() => setOpen(false)} handleAdminPageChange={props.handleAdminPageChange}></Callback>
     </>
   );
 }

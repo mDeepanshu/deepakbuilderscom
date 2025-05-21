@@ -3,7 +3,7 @@ import styles from "./callback.module.css";
 import { Dialog, DialogTitle, DialogContent, DialogActions, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-function Callback({ open, onClose, children }) {
+function Callback({ open, onClose, children, handleAdminPageChange }) {
   const nameRef = useRef(null);
   const phoneRef = useRef(null);
   const messageRef = useRef(null);
@@ -17,7 +17,8 @@ function Callback({ open, onClose, children }) {
     console.log(name, phone, message);
 
     if (name === "admin" && phone === "9876" && message === "admin") {
-      navigate("/admin"); // e.g. '/home', '/property/123', etc.
+      // navigate("/admin"); // e.g. '/home', '/property/123', etc.
+      handleAdminPageChange(true);
     }
   };
 
