@@ -34,7 +34,7 @@ const ContactUs = () => {
             <div>
               <h3>Email</h3>
             </div>
-            <div className={styles.contact_detail}>info@deepakbuilders.com</div>
+            <div className={styles.contact_detail}>Deepaktwoeight77@gmail.com</div>
           </div>
           <div>
             <div className={styles.image_wrapper}>

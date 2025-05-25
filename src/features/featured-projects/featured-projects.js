@@ -32,22 +32,22 @@ function FeaturedProjects() {
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
 
-const handleDown = (e) => {
-  if (!containerRef.current) return;
-  const pageX = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
-  setIsDragging(true);
-  setStartX(pageX - containerRef.current.offsetLeft);
-  setScrollLeft(containerRef.current.scrollLeft);
-};
+  const handleDown = (e) => {
+    if (!containerRef.current) return;
+    const pageX = e.type.includes("mouse") ? e.pageX : e.touches[0].pageX;
+    setIsDragging(true);
+    setStartX(pageX - containerRef.current.offsetLeft);
+    setScrollLeft(containerRef.current.scrollLeft);
+  };
 
-const handleMove = (e) => {
-  if (!isDragging || !containerRef.current) return;
-  e.preventDefault(); // Prevent scrolling while dragging
-  const pageX = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
-  const x = pageX - containerRef.current.offsetLeft;
-  const walk = x - startX;
-  containerRef.current.scrollLeft = scrollLeft - walk;
-};
+  const handleMove = (e) => {
+    if (!isDragging || !containerRef.current) return;
+    e.preventDefault(); // Prevent scrolling while dragging
+    const pageX = e.type.includes("mouse") ? e.pageX : e.touches[0].pageX;
+    const x = pageX - containerRef.current.offsetLeft;
+    const walk = x - startX;
+    containerRef.current.scrollLeft = scrollLeft - walk;
+  };
 
   const handleMouseUp = () => {
     setIsDragging(false);
@@ -68,10 +68,17 @@ const handleMove = (e) => {
               <p className={styles.properties_line}></p> PROPERTIES
             </div>
             <div className={styles.label_two}>Feature Properties</div>
-            <div>Discover standout homes carefully selected for their style, location, and value. From modern apartments to luxury estates, these listings offer exceptional living and investment opportunities.</div>
+            <div>
+              Discover standout homes carefully selected for their style, location, and value. From modern apartments to luxury estates,
+              these listings offer exceptional living and investment opportunities.
+            </div>
             <div>
               <button type="button" className={styles.view_property_btn}>
-                <div className={styles.btn_label}>View Properties</div>
+                <div className={styles.btn_label}>
+                  <Link to={`/allProjects`} className={styles.projectLink}>
+                    View Properties
+                  </Link>
+                </div>
                 <img src={building} width="20px" height="20px" />
               </button>
             </div>
@@ -119,7 +126,9 @@ const handleMove = (e) => {
                   {properties[index].Property_Price}
                 </div>
                 <div className={styles.property_desc}>
-                  <img src={shower} />{properties[index].Property_Bedroom} Bedroom <img src={bed} /> {properties[index].Property_Bathroom} Bathroom <img src={area} /> {properties[index].Property_SqFt} Sqft
+                  <img src={shower} />
+                  {properties[index].Property_Bedroom} Bedroom <img src={bed} /> {properties[index].Property_Bathroom} Bathroom{" "}
+                  <img src={area} /> {properties[index].Property_SqFt} Sqft
                 </div>
               </div>
             ))}
