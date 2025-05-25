@@ -4,6 +4,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CallIcon from "@mui/icons-material/Call";
 import menu from "../../assets/header/svgexport-1.svg";
 import phone from "../../assets/header/svgexport-2.svg";
+import whatsapp from "../../assets/header/whatsapp.svg";
+
 import Callback from "../dialog/callback/callback";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
@@ -72,7 +74,15 @@ function Header(props) {
                 <div className={styles.verticalLine}></div>
                 <div className={styles.popover_col2}>
                   <div>+91-7067999777</div>
-                  <div>+91-7879999777</div>
+                  <div className={styles.whatsapp}>
+                    <img src={whatsapp} width="24px" height="24px" />
+                    <a
+                      href="https://wa.me/917879999777?text=Hi%2C%20I%20am%20interested%20in%20a%20property%20listed%20on%20your%20website.%20Could%20you%20please%20share%20more%20details%3F"
+                      target="_blank"
+                    >
+                      +91-7879999777
+                    </a>
+                  </div>
                 </div>
               </div>
             )}
@@ -86,10 +96,16 @@ function Header(props) {
                   <div className={styles.popover2_col1}>
                     <div onClick={() => setOpen(true)}>WRITE TO US</div>
                   </div>
-                  {/* <div className={styles.popover_col2}> */}
                   <div>+91-7067999777</div>
-                  <div>+91-7879999777</div>
-                  {/* </div> */}
+                  <div className={styles.whatsapp}>
+                    <img src={whatsapp} width="24px" height="24px" />
+                    <a
+                      href="https://wa.me/917879999777?text=Hi%2C%20I%20am%20interested%20in%20a%20property%20listed%20on%20your%20website.%20Could%20you%20please%20share%20more%20details%3F"
+                      target="_blank"
+                    >
+                      +91-7879999777
+                    </a>
+                  </div>
                 </div>
               )}
             </div>

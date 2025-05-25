@@ -118,7 +118,7 @@
   right: 0px;
   top: 68px;
   flex-direction: column;
-  width: 10rem;
+  width: 12rem;
   gap: 1rem;
   text-align: left;
   padding-left: 1rem;
@@ -164,4 +164,20 @@
 .phone_icon,
 .menu_icon{
   cursor: pointer;
+}
+
+.whatsapp{
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  margin-left: 4px;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  color: #ed7d3a;
+  transition: color 0.3s ease-out;
 }

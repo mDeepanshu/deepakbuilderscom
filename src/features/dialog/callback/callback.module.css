@@ -21,7 +21,7 @@
     width: 80%;
 }
 
-input{
+.inputField{
     width: 100%;
     border: none;               /* Remove all borders */
     border-bottom: 1px solid #000; /* Keep only bottom border */
@@ -29,7 +29,7 @@ input{
 
 }
 
-textarea{
+.textArea{
     width: 100%;
     border: none;               /* Remove all borders */
     border-bottom: 1px solid #000; /* Keep only bottom border */
