@@ -94,6 +94,7 @@
   height: 1px;
   width: 25px;
   background-color: #2f3d7e;
+  padding: 0;
 }
 .property_img {
   position: relative; /* FIX: Ensure the shine effect is positioned relative to this */

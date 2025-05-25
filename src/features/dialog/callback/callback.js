@@ -33,15 +33,15 @@ function Callback({ open, onClose, children, handleAdminPageChange }) {
           <div className={styles.form}>
             <div className={styles.input}>
               <label>Name*</label>
-              <input type="text" ref={nameRef} />
+              <input className={styles.inputField} type="text" ref={nameRef} />
             </div>
             <div className={styles.input}>
               <label>Phone*</label>
-              <input type="number" ref={phoneRef} />
+              <input className={styles.inputField} type="text" ref={phoneRef} />
             </div>
             <div className={styles.input}>
               <label>Message*</label>
-              <textarea ref={messageRef} />
+              <textarea className={styles.textArea} ref={messageRef} />
             </div>
             <div></div>
           </div>

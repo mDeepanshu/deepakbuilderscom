@@ -18,7 +18,7 @@ function Footer() {
             <div className={styles.description}>
               <div className={styles.heading}>RK Constructions <button>Read More</button></div>
               <div>
-                Established in 1990, Godrej Properties is the first real estate company to have ISO certification. The company is currently
+                Established in 1990, Rai Krishna Constructions is the first real estate company to have ISO certification. The company is currently
                 developing landmark projects in 12 cities across India covering over 18.58 million square meters. Godrej Properties is known
                 to bring innovation and excellence to the real estate industry.
               </div>
